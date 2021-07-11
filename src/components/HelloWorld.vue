@@ -1,16 +1,15 @@
 <template>
   <div>
-    <button @click="clickedEvent()">ボタン</button>
+    <p>{{ message }}</p>
+    <input v-model="message">
   </div>
 </template>
 
 <script>
   export default {
     name: "HelloWorld",
-    methods: {
-      clickedEvent(){
-        console.log('clicked!');
-      }
-    },
+    data: () => ({
+      message: "Hello world!",
+    }),
   };
 </script>
