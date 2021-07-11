@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <HelloWorld message="Hello Vue"/> <!--messageの値を渡す-->
+    <HelloWorld message="Hello Vue" />
+    <!--messageの値を渡す-->
   </div>
 </template>
 
