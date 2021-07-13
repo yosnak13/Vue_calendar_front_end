@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import { mapGetters, mapActions } from 'vuex';
 import CalendarDetails from './CalendarDetails.vue';
 
 export default {
@@ -20,20 +20,11 @@ export default {
   components: {
     CalendarDetails,
   },
-  data: () => ({
-    events: [],
-  }),
+  computed: {
+    ...mapGetters('events', ['events']),
+  },
   methods: {
-    fetchEvents() {
-      axios
-        .get("http://localhost:3000/events")
-        .then((response) => {
-          this.events = response.data;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    },
+    ...mapActions('events', ['fetchEvents'])
   },
 };
 </script>

@@ -22,7 +22,8 @@ const actions = {
 
 export default {
   namespaced: true,
-  state, getters,
+  state,
+  getters,
   mutations,
   actions
 };
