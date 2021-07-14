@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import CalendarDetails from './CalendarDetails.vue';
+import { mapGetters, mapActions } from "vuex";
+import CalendarDetails from "./CalendarDetails.vue";
 
 export default {
   name: "Calendar",
@@ -21,10 +21,10 @@ export default {
     CalendarDetails,
   },
   computed: {
-    ...mapGetters('events', ['events']),
+    ...mapGetters("events", ["events"]),
   },
   methods: {
-    ...mapActions('events', ['fetchEvents'])
+    ...mapActions("events", ["fetchEvents"]),
   },
 };
 </script>
