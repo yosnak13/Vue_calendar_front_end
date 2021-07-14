@@ -7,6 +7,10 @@
       </v-list-item>
     </v-list>
     <v-btn type="submit" @click="fetchEvents()">fetchEvents</v-btn>
+
+    <v-sheet height="100vh">
+      <v-calendar></v-calendar>
+    </v-sheet>
   </div>
 </template>
 
