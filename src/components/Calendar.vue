@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-sheet height="6vh" class="d-flex align-center">
-      <v-toolbar-title>2020年 10月</v-toolbar-title>
+      <v-toolbar-title>{{ title }}</v-toolbar-title>
     </v-sheet>
 
     <v-sheet height="94vh">
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { format } from "date-fns";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -24,6 +25,9 @@ export default {
   }),
   computed: {
     ...mapGetters("events", ["events"]),
+    title() {
+      return format(this.value, "yyyy年 M月")
+    },
   },
   methods: {
     ...mapActions("events", ["fetchEvents"]),
