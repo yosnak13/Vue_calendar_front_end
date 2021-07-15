@@ -1,14 +1,10 @@
 <template>
   <div>
-    <h1 class="text-h1">Calendar</h1>
-    <v-list>
-      <v-list-item v-for="event in events" :key="event.id">
-        {{ event.name }}
-      </v-list-item>
-    </v-list>
-    <v-btn type="submit" @click="fetchEvents()">fetchEvents</v-btn>
+    <v-sheet height="6vh" class="d-flex align-center">
+      <v-toolbar-title>2020年 10月</v-toolbar-title>
+    </v-sheet>
 
-    <v-sheet height="100vh">
+    <v-sheet height="94vh">
       <v-calendar
         v-model="value"
         :events="events"
