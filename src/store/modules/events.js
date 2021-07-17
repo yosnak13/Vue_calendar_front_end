@@ -7,13 +7,14 @@ const state = {
 
 const getters = {
   //変換処理
-  events: (state) => state.events.map(event => {
-    return {
-      ...event,
-      start: new Date(event.start),
-      end: new Date(event.end)
-    }
-  })
+  events: (state) =>
+    state.events.map((event) => {
+      return {
+        ...event,
+        start: new Date(event.start),
+        end: new Date(event.end),
+      };
+    }),
 };
 
 const mutations = {
