@@ -11,6 +11,10 @@
       <v-toolbar-title>{{ title }}</v-toolbar-title>
     </v-sheet>
 
+    <v-dialog :value="dialogMessage !== ''">
+      <h1>{{ dialogMessage }}</h1>
+    </v-dialog>
+
     <v-sheet height="94vh">
       <v-calendar
         ref="calendar"
@@ -20,6 +24,7 @@
         locale="ja-jp"
         :day-format="(timestamp) => new Date(timestamp.date).getDate()"
         :month-format="(timestamp) => (new Date(timestamp.date).getMonth() + 1 ) + ' /'"
+        @click:event="showEvent"
         >
       </v-calendar>
     </v-sheet>
@@ -34,6 +39,7 @@ export default {
   name: "Calendar",
   data: () => ({
     value: format(new Date(), 'yyyy/MM/dd'),
+    dialogMessage: '',
   }),
   computed: {
     ...mapGetters("events", ["events"]),
@@ -45,6 +51,9 @@ export default {
     ...mapActions("events", ["fetchEvents"]),
     setToday(){
       this.value = format(new Date(), 'yyyy/MM/dd');
+    },
+    showEvent({event}){
+      this.dialogMessage = event.name
     },
   },
 };
