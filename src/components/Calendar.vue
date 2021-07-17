@@ -54,13 +54,13 @@ export default {
     dialogMessage: "",
   }),
   computed: {
-    ...mapGetters('events', ['events', 'event']),
+    ...mapGetters("events", ["events", "event"]),
     title() {
       return format(new Date(this.value), "yyyy年 M月");
     },
   },
   methods: {
-    ...mapActions('events', ['fetchEvents', 'setEvent']),
+    ...mapActions("events", ["fetchEvents", "setEvent"]),
     setToday() {
       this.value = format(new Date(), "yyyy/MM/dd");
     },
