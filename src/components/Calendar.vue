@@ -4,7 +4,7 @@
       <v-btn icon @click="$refs.calendar.prev()">
         <v-icon>mdi-chevron-left</v-icon>
       </v-btn>
-      <v-btn icon @click="$refs.calendar.prev()">
+      <v-btn icon @click="$refs.calendar.next()">
         <v-icon>mdi-chevron-right</v-icon>
       </v-btn>
       <v-toolbar-title>{{ title }}</v-toolbar-title>
