@@ -51,7 +51,6 @@ export default {
   name: "Calendar",
   data: () => ({
     value: format(new Date(), "yyyy/MM/dd"),
-    dialogMessage: "",
   }),
   computed: {
     ...mapGetters("events", ["events", "event"]),

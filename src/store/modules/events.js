@@ -35,7 +35,7 @@ const actions = {
     commit("setEvent", response.data); // mutationを呼び出す
   },
   setEvent({ commit }, event) {
-    commit("serEvent", event);
+    commit("setEvent", event);
   },
 };
 
