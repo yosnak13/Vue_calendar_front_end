@@ -39,7 +39,7 @@
           <v-card-title>
             <v-row>
               <v-col cols="2" class="d-flex justify-center align-center">
-                <v-icon size="20px">mdi-square</v-icon>
+                <v-icon size="20px" :color="event.color || 'blue'">mdi-square</v-icon>
               </v-col>
               <v-col class="d-flex align-center">
                 {{ event.name }}
@@ -68,7 +68,7 @@
               </v-col>
             </v-row>
           </v-card-text>
-          
+
         </v-card>
       </div>
     </v-dialog>
