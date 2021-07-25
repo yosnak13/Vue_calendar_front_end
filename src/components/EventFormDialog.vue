@@ -18,7 +18,7 @@ import { mapGetters, mapActions } from 'vuex';
 import DialogSection from './DialogSection';
 
 export default {
-  name: 'EventFromDialog',
+  name: 'EventFormDialog',
   components: {
     DialogSection,
   },
@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     ...mapActions('events', ['setEvent']),
-    closeDialog(){
+    closeDialog() {
       this.setEvent(null);
     },
   },
