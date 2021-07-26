@@ -10,6 +10,9 @@
         <v-text-field v-model="name" label="タイトル"></v-text-field>
       </DialogSection>
     </v-card-text>
+    <v-card-actons class="d-flex justify-end">
+      <v-btn @click="submit">保存</v-btn>
+    </v-card-actons>
   </v-card>
 </template>
 
@@ -29,9 +32,18 @@ export default {
     ...mapGetters('events', ['event']),
   },
   methods: {
-    ...mapActions('events', ['setEvent']),
+    ...mapActions('events', ['setEvent', 'setEditMode', 'createEvent']),
     closeDialog() {
       this.setEvent(null);
+    },
+    submit(){
+      const params = {
+        name: this.name,
+        start: this.event.start,
+        end: this.event.end,
+      };
+      this.createEvent(params);
+      this.closeDialog();
     },
   },
 };

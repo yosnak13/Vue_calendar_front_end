@@ -43,7 +43,7 @@ const actions = {
     commit("setEvents", response.data); // mutationへ渡す
   },
   async createEvent({ commit }, event) {
-    const response = await axios.post(`${apiURL}/envets`, event);
+    const response = await axios.post(`${apiUrl}/events`, event);
     commit('appendEvent', response.data);
   },
   setEvent({ commit }, event) {
