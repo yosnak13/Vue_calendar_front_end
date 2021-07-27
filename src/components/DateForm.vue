@@ -4,8 +4,8 @@
       <v-btn text v-on='on'>{{ value || '日付を選択' }}</v-btn>
     </template>
     <v-date-picker
-    :value="value"
-    @input="$emit('input', $event)"
+    :value="value.replace(/\//g, '-')"
+    @input="$emit('input', $event.replace(/-/g, '/'))"
     no-title
     locale="ja-ja"
     :day-format="value => new Date(value).getDate()"
