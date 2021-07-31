@@ -7,7 +7,7 @@
     </v-card-actions>
 
     <v-card-title>
-      <DialogSection icon="mdi-square" :color="event.color || 'bule'">
+      <DialogSection icon="mdi-square" :color="event.color">
         {{ event.name }}
       </DialogSection>
     </v-card-title>
