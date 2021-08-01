@@ -16,7 +16,7 @@
         <TimeForm v-model="endTime" />
       </DialogSection>
       <DialogSection icon="mdi-card-text-outline">
-        <TextFrom v-mode="description" />
+        <TextFrom v-model="description" />
       </DialogSection>
     </v-card-text>
     <v-card-actons class="d-flex justify-end">
