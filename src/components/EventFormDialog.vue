@@ -15,6 +15,9 @@
         <DateForm v-model="endDate" />
         <TimeForm v-model="endTime" />
       </DialogSection>
+      <DialogSection icon="mdi-card-text-outline">
+        <TextFrom v-mode="description" />
+      </DialogSection>
     </v-card-text>
     <v-card-actons class="d-flex justify-end">
       <v-btn @click="submit">保存</v-btn>
@@ -27,6 +30,7 @@ import { mapGetters, mapActions } from 'vuex';
 import DialogSection from './DialogSection';
 import DateForm from './DateForm';
 import TimeForm from './TimeForm';
+import TextFrom from './TextForm';
 
 export default {
   name: 'EventFormDialog',
@@ -34,6 +38,7 @@ export default {
     DialogSection,
     DateForm,
     TimeForm,
+    TextFrom,
   },
   data: () => ({
     name: '',
@@ -41,6 +46,7 @@ export default {
     startTime: null,
     endDate: null,
     endTime: null,
+    description: '',
   }),
   computed: {
     ...mapGetters('events', ['event']),
@@ -61,6 +67,7 @@ export default {
         name: this.name,
         start: `${this.startDate} ${this.startTime || ''}`,
         end: `${this.endDate} ${this.endTime || ''}`,
+        description: this.description,
       };
       this.createEvent(params);
       this.closeDialog();
