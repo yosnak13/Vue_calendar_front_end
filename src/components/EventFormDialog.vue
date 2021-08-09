@@ -27,9 +27,9 @@
         <ColorForm v-model="color" />
       </DialogSection>
     </v-card-text>
-    <v-card-actons class="d-flex justify-end">
-      <v-btn @click="submit">保存</v-btn>
-    </v-card-actons>
+    <v-card-actions class="d-flex justify-end">
+      <v-btn :disabled="isInvalid" @click="submit">保存</v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 
@@ -73,6 +73,9 @@ export default {
   },
   computed: {
     ...mapGetters('events', ['event']),
+    isInvalid(){
+      return this.$v.$invalid;
+    },
   },
   created(){
     this.startDate = this.event.startDate;
@@ -88,6 +91,9 @@ export default {
       this.setEvent(null);
     },
     submit(){
+      if (this.isInvalid){
+        return
+      }
       const params = {
         name: this.name,
         start: `${this.startDate} ${this.startTime || ''}`,
