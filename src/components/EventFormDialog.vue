@@ -90,7 +90,7 @@ export default {
     this.endDate = this.event.endDate;
     this.endTime = this.event.endTime;
     this.color = this.event.color;
-    this.allDay = this.event.timed;
+    this.allDay = !this.event.timed;
   },
   methods: {
     ...mapActions('events', ['setEvent', 'setEditMode', 'createEvent']),
