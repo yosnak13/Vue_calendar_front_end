@@ -120,6 +120,12 @@ export default {
       }
       this.closeDialog();
     },
+    cancel(){
+      this.setEditMode(false);
+      if(!this.event.id){
+        this.setEvent(null);
+      }
+    },
   },
 };
 </script>
